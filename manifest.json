@@ -1,0 +1,33 @@
+{
+  "name": "115分科落點試算",
+  "short_name": "落點試算",
+  "description": "115學年度分科分發落點試算：1,764系組採計加權總分與歷年最低錄取分比對，成績僅在裝置端計算。",
+  "lang": "zh-Hant",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#16243A",
+  "background_color": "#EEF1F4",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

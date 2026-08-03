@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>115分科分發 落點試算</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16243A">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="落點試算">
+</head>
+<body>
+<header>
+  <h1>115學年度分科分發 落點試算</h1>
+  <div class="sub">1,764 系組｜115年官方組合排名（適用系組）優先，114/113/112 最低錄取分比對為輔｜資料已三重核實</div>
+</header>
+<div class="wrap">
+
+<section class="scorecard">
+  <div class="sc-head">
+    <h2>成 績 輸 入 卡</h2>
+    <button class="toggle" id="scToggle" aria-expanded="true">收合</button>
+  </div>
+  <div id="scBody">
+    <div class="sc-grid" id="scGrid"></div>
+    <div class="sc-foot">
+      <span>填入大考中心公告之 <b>60級分制</b> 成績（術科為百分制）。未報考請留 0。</span>
+      <span class="warn">未報考採計科目之系組不予分發，可用下方「僅顯示可分發」過濾。</span>
+    </div>
+  </div>
+</section>
+
+<div class="filters">
+  <div class="frow">
+    <input type="search" id="q" placeholder="搜尋系組名稱，如：地政、法律、經濟…">
+    <select id="fSchool"><option value="">全部學校</option></select>
+    <select id="fSort">
+      <option value="pct_desc">依機會排序（差異高→低）</option>
+      <option value="pct_asc">依機會排序（差異低→高）</option>
+      <option value="tot_desc">依採計總分（高→低）</option>
+      <option value="m4_desc">依114最低分（高→低）</option>
+      <option value="code">依系組代碼</option>
+    </select>
+  </div>
+  <div class="chips" id="chips">
+    <span class="chip on" data-f="eligible">僅顯示可分發</span>
+    <span class="chip" data-f="same114">僅114採計一致</span>
+    <span class="chip band" data-b="hi">高<span class="n"></span></span>
+    <span class="chip band" data-b="mh">中高<span class="n"></span></span>
+    <span class="chip band" data-b="ed">邊緣<span class="n"></span></span>
+    <span class="chip band" data-b="lo">偏低<span class="n"></span></span>
+    <span class="chip band" data-b="vl">低<span class="n"></span></span>
+  </div>
+</div>
+
+<div class="stats" id="stats"></div>
+<div class="rlist" id="rlist"></div>
+<button class="morebtn" id="moreBtn" hidden>顯示更多</button>
+
+<p class="foot-note">
+評估分級（標示「官方排名佐證」者）：高 ≥+8個百分點｜中高 +2~8｜邊緣 ±2｜偏低 −8~−2｜低 &lt;−8個百分點。
+算法：將該系組114年最低錄取分代入115年同一份官方「採計組合成績人數累計表」換算成等值PR，
+與您今年依同一張表算出的PR做百分點差距比較——僅適用於「114年採計科目與加權跟115年完全相同」
+且「115年採計科目加權皆為1.00」的系組（因唯有如此，總分才等於各科實得分數直接加總，
+可與同組合全體考生精確比對名次）。
+其餘系組評估分級：高 ≥+10%｜中高 +3~10%｜邊緣 ±3%｜偏低 −10~−3%｜低 &lt;−10%（差異% =（採計總分−114最低分）÷114最低分），
+為與114年之靜態比較，未反映115年考題難易、級分分布、名額與登記人數變化，非真實錄取機率。
+兩種算法皆非正式錄取機率預測，僅供落點參考；標示「114採計不同」或「與115採計不同」者，其114年比較僅供趨勢參考。
+檢定標準未通過者不予分發：學測科目檢定（210系組，依115學測五標：國13/12/10/9/7、英13/11/8/5/3、數A12/10/8/5/4、數B11/9/5/3/2、社13/12/10/8/7、自13/12/9/7/5）與英聽檢定（20系組）均已依60級分自動換算之學測15級分（無條件進位÷4）與英聽級數自動判定，並納入「僅顯示可分發」過濾。學測15級分由60級分自動換算，僅需輸入60級分制成績，分科4科為預估值請自行修改。
+資料來源：115學年度大學分發入學招生簡章、大學考試入學分發委員會112–114學年度各系組最低錄取標準一覽表、112–115學年度採計組合成績人數累計表與回流後分發入學總名額表。全部1,764系組經雙引擎逐筆交叉核實（驗證日期：2026-07-18；官方組合排名／115名額整合另行驗證）。檢定與成績採計規定以考分會正式公告為準。成績僅於使用者裝置端計算，不上傳、不儲存。
+</p>
+</div>
+
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+:root{
+  --ink:#1B2A41; --ink-soft:#4A5A70; --paper:#EEF1F4; --card:#FFFFFF;
+  --line:#C9D2DC; --red:#C9372C; --green:#2E7D5B; --amber:#B7791F;
+  --hl:#FFF3B0; --navy:#16243A;
+  --serif:"Noto Serif TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --mono:"SF Mono",Consolas,"Roboto Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.55}
+header{background:var(--navy);color:#fff;padding:14px 16px 12px}
+header h1{font-family:var(--serif);font-weight:900;font-size:20px;letter-spacing:.06em}
+header .sub{font-size:12px;color:#AFC0D4;margin-top:2px;letter-spacing:.04em}
+.wrap{max-width:1080px;margin:0 auto;padding:12px}
+/* 成績卡：準考證式 */
+.scorecard{background:var(--card);border:2px solid var(--ink);border-radius:6px;margin-bottom:12px;overflow:hidden}
+.scorecard .sc-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:2px solid var(--ink);background:repeating-linear-gradient(-45deg,#F6F8FA 0 8px,#EFF3F7 8px 16px)}
+.scorecard .sc-head h2{font-family:var(--serif);font-size:16px;font-weight:900;letter-spacing:.15em}
+.sc-head .toggle{font-size:12px;color:var(--ink-soft);background:none;border:1px solid var(--line);border-radius:4px;padding:4px 10px;cursor:pointer}
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;padding:12px 14px}
+.sc-cell{border:1px solid var(--line);border-radius:5px;padding:6px 8px;background:#FBFCFD}
+.sc-cell label{display:block;font-size:11px;color:var(--ink-soft);letter-spacing:.02em}
+.sc-cell .tag{font-size:9px;color:#8593A6}
+.sc-cell input{width:100%;border:none;background:transparent;font:600 20px var(--mono);color:var(--ink);outline:none;padding:2px 0}
+.sc-cell:focus-within{border-color:var(--ink);background:var(--hl)}
+.sc-cell.zero input{color:#B4BECA}
+.sc-foot{padding:8px 14px;border-top:1px dashed var(--line);font-size:12px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sc-foot .warn{color:var(--red)}
+/* 篩選列 */
+.filters{position:sticky;top:0;z-index:20;background:var(--paper);padding:8px 0;border-bottom:1px solid var(--line)}
+.frow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.frow select,.frow input[type=search]{font:14px var(--sans);padding:7px 10px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}
+.frow input[type=search]{flex:1;min-width:140px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:#fff;cursor:pointer;user-select:none;color:var(--ink-soft)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip .n{font-family:var(--mono);font-size:11px;margin-left:3px}
+.stats{font-size:12px;color:var(--ink-soft);margin:10px 2px 6px}
+.stats b{font-family:var(--mono);color:var(--ink)}
+/* 結果卡 */
+.rlist{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;cursor:pointer}
+.rc:hover{border-color:var(--ink-soft)}
+.rc-top{display:flex;gap:10px;align-items:flex-start}
+.rc-main{flex:1;min-width:0}
+.rc-sch{font-size:12px;color:var(--ink-soft);letter-spacing:.03em}
+.rc-dep{font-family:var(--serif);font-weight:700;font-size:16px;line-height:1.35}
+.rc-adopt{font:12px var(--mono);color:var(--ink-soft);margin-top:3px;word-break:break-all}
+.rc-adopt .miss{color:var(--red);font-weight:700}
+/* 評估印章 */
+.stamp{flex-shrink:0;text-align:center;min-width:74px}
+.seal{display:inline-block;font-family:var(--serif);font-weight:900;font-size:15px;letter-spacing:.2em;padding:5px 8px 4px;border:2.5px solid;border-radius:6px;transform:rotate(-3deg);line-height:1.2;white-space:nowrap}
+.seal.hi{color:var(--green);border-color:var(--green);background:#EAF4EF}
+.seal.mh{color:#3B6E45;border-color:#3B6E45;background:#F0F6EC}
+.seal.ed{color:var(--amber);border-color:var(--amber);background:var(--hl)}
+.seal.lo{color:#A05A1F;border-color:#A05A1F;background:#FBEFE2}
+.seal.vl{color:var(--red);border-color:var(--red);background:#FBEBE9}
+.seal.na{color:#8593A6;border-color:#B4BECA;background:#F3F5F8;font-size:12px;letter-spacing:.05em}
+.stamp .pct{font:700 12px var(--mono);margin-top:4px}
+.rc-nums{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+.num{min-width:70px}
+.num .l{font-size:10px;color:#8593A6;letter-spacing:.05em}
+.num .v{font:700 17px var(--mono)}
+.pos{color:var(--green)}.neg{color:var(--red)}
+.rc-more{display:none;border-top:1px dashed var(--line);margin-top:9px;padding-top:8px;font-size:12.5px;color:var(--ink-soft)}
+.rc.open .rc-more{display:block}
+.rc-more table{border-collapse:collapse;width:100%;margin:4px 0}
+.rc-more td{padding:2px 8px 2px 0;vertical-align:top}
+.rc-more .yl{font-family:var(--mono);white-space:nowrap}
+.badge-diff{display:inline-block;font-size:10px;color:var(--red);border:1px solid var(--red);border-radius:3px;padding:0 4px;margin-left:4px;vertical-align:1px}
+.rc-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.badge-src{display:inline-block;font-size:10px;font-weight:700;color:#8A6A1E;border:1px solid #C9A227;background:#FBF3DC;border-radius:3px;padding:1px 5px}
+.badge-seat{display:inline-block;font-size:10px;color:var(--ink-soft);border:1px solid var(--line);background:#F3F5F8;border-radius:3px;padding:1px 5px}
+.badge-seat.up{color:var(--green);border-color:var(--green);background:#EAF4EF}
+.badge-seat.down{color:var(--red);border-color:var(--red);background:#FBEBE9}
+.badge-seat.new{color:var(--ink-soft);border-color:var(--line);background:#F3F5F8}
+.foot-note{margin:18px 4px 30px;font-size:11.5px;color:#8593A6;line-height:1.7}
+.morebtn{margin:14px auto 4px;display:block;font:14px var(--sans);padding:9px 26px;border:1px solid var(--ink);background:#fff;border-radius:6px;cursor:pointer;color:var(--ink)}
+@media (max-width:640px){
+  .sc-grid{grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:6px;padding:10px}
+  .rc-dep{font-size:15px}
+  .num .v{font-size:16px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .rc{transition:border-color .15s}
+  .seal{transition:transform .15s}
+  .rc:hover .seal{transform:rotate(0deg)}
+}
