@@ -1,0 +1,15 @@
+# 個人版：嚴禁公開（CLAUDE.md 版本鐵則）
+site/index_personal.html
+*博鈜*
+# 系統
+.DS_Store
+Thumbs.db
+# 個人版產生器（內含實際成績）
+tools/build_excel.py
+tools/build_personal_html.py
+# 原始來源檔（官方公告文件，體積大，不需版控；已處理為 hist.json/accu.json/r115.json）
+# 與 parse_115_recruit.py 的來源PDF同一慣例：僅版控處理後的中繼資料與程式碼
+tools/112/
+tools/113/
+tools/114/
+tools/115/
