@@ -87,3 +87,35 @@ header .sub{font-size:12px;color:#AFC0D4;margin-top:2px;letter-spacing:.04em}
   .seal{transition:transform .15s}
   .rc:hover .seal{transform:rotate(0deg)}
 }
+
+/* ── 116版新增：頁首提示、同分參酌警示、三年歷史、名額欄位 ── */
+.notice{background:#FFF8E1;border:1px solid var(--amber);border-left:4px solid var(--amber);border-radius:5px;padding:9px 12px;font-size:12.5px;color:#6B5410;line-height:1.6;margin-bottom:12px}
+.badge-tie{display:inline-block;font-size:10px;font-weight:700;color:#8A5A0B;border:1px solid var(--amber);background:#FFF3CD;border-radius:3px;padding:1px 5px}
+.badge-tie.always{color:#8C2F26;border-color:var(--red);background:#FBE6E3}
+.rc.tie{border-left:4px solid var(--amber)}
+.tiebox{border:1px solid var(--amber);background:#FFFBEF;border-radius:5px;padding:9px 11px;margin:2px 0 10px}
+.tie-h{font-family:var(--serif);font-weight:900;font-size:13.5px;color:#8A5A0B;letter-spacing:.08em;margin-bottom:5px}
+.tie-line{font-size:12.5px;color:#5C4A22;line-height:1.65;margin:3px 0}
+.tie-line.warn2{color:var(--red);font-weight:600}
+.tie-lv{list-style:none;margin:5px 0 2px;padding:0}
+.tie-lv li{font-size:12.5px;color:#5C4A22;padding:2px 0 2px 2px;display:flex;gap:7px;align-items:baseline;flex-wrap:wrap}
+.tie-lv .lvn{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--amber);color:#fff;font:700 10px var(--mono);flex-shrink:0}
+.tie-lv .ok{color:var(--green);font-weight:700}
+.tie-lv .ng{color:var(--red);font-weight:700}
+.sub2{font-size:11px;color:#8593A6}
+details.hist{margin-top:8px;border:1px dashed var(--line);border-radius:5px;background:#FAFBFC}
+details.hist>summary{cursor:pointer;padding:6px 10px;font-size:12.5px;font-weight:700;color:var(--ink);list-style:none;user-select:none}
+details.hist>summary::-webkit-details-marker{display:none}
+details.hist>summary::before{content:"▸ ";color:var(--ink-soft)}
+details.hist[open]>summary::before{content:"▾ "}
+table.histtb{border-collapse:collapse;width:100%;margin:0 0 4px;font-size:12px}
+table.histtb td{padding:4px 8px;vertical-align:top;border-top:1px solid var(--line)}
+table.histtb tr.hh td{font-weight:700;color:var(--ink-soft);border-top:none;background:#F2F5F8;font-size:11px;letter-spacing:.03em}
+table.histtb td.yy{font:700 12px var(--mono);white-space:nowrap;color:var(--ink)}
+.trend{padding:6px 10px 8px;font-size:12px;color:var(--ink-soft);border-top:1px dotted var(--line)}
+.trend .up{color:var(--red)}
+.trend .down{color:var(--green)}
+@media (max-width:640px){
+  table.histtb{font-size:11px}
+  table.histtb td{padding:3px 5px}
+}

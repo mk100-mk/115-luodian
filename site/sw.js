@@ -1,5 +1,5 @@
-/* 115分科落點試算 — Service Worker（cache-first，完全離線） */
-const CACHE = 'luodian-v4';
+/* 116分科落點試算 — Service Worker（cache-first，完全離線） */
+const CACHE = 'luodian-116-v1';
 const PRECACHE = [
   './',
   './index.html',
