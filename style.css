@@ -90,6 +90,7 @@ header .sub{font-size:12px;color:#AFC0D4;margin-top:2px;letter-spacing:.04em}
 
 /* ── 116版新增：頁首提示、同分參酌警示、三年歷史、名額欄位 ── */
 .notice{background:#FFF8E1;border:1px solid var(--amber);border-left:4px solid var(--amber);border-radius:5px;padding:9px 12px;font-size:12.5px;color:#6B5410;line-height:1.6;margin-bottom:12px}
+.notice-hd{font-family:var(--serif);font-weight:900;font-size:13.5px;color:#8C2F26;letter-spacing:.03em;line-height:1.5;padding-bottom:5px;margin-bottom:6px;border-bottom:1px solid rgba(140,47,38,.28)}
 .badge-tie{display:inline-block;font-size:10px;font-weight:700;color:#8A5A0B;border:1px solid var(--amber);background:#FFF3CD;border-radius:3px;padding:1px 5px}
 .badge-tie.always{color:#8C2F26;border-color:var(--red);background:#FBE6E3}
 .rc.tie{border-left:4px solid var(--amber)}

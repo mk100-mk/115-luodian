@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────
+# 116學年度分科分發 落點試算
+# 本站為家庭自用工具，非公開服務，不希望出現在搜尋結果中。
+# ─────────────────────────────────────────────────────────────
+#
+# 設計說明（重要，請勿隨意改成 Disallow: /）：
+#   要讓搜尋引擎「移除」既有索引，必須讓爬蟲能讀到頁面上的
+#   <meta name="robots" content="noindex">。若在此處全面 Disallow，
+#   爬蟲根本不會抓取頁面，就永遠看不到 noindex 指示，
+#   既有的索引條目反而會長期殘留。
+#   因此這裡刻意允許一般搜尋引擎檢索 HTML，由 noindex 負責排除；
+#   待確認索引已完全移除後，若仍有需要再改為全面 Disallow。
+
+# 一般搜尋引擎：允許檢索（每頁皆含 noindex，故不會列入搜尋結果）
+User-agent: *
+Allow: /
+Disallow: /data/
+
+# AI 資料擷取爬蟲：全面禁止
+# 這類爬蟲多半不理會 noindex，只看 robots.txt，故須在此明列。
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# 不提供 sitemap（本站不主動送交索引）
